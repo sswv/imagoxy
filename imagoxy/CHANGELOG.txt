@@ -1,0 +1,11 @@
+CHANGELOG for Imagoxy 0.51 / 2009-07-20
+========================================
+1. Support original URL with query string.
+2. Support original URL with special characters.
+e.g. http://www.example.com/imagoxy/getimg.php?s=http://lh5.ggpht.com/_ZQ_-T1yEBQY/SmQSOX5_xFI/AAAAAAAABPY/h8Tw6PWuZP8/%25E7%2581%25AB%25E8%25BD%25A6%2520%2520%2520%25E6%25B5%258B%25E8%25AF%2595-%252B%253D_%2520%2520%255B.a.%255D%2520%25E5%259B%25BE%25E7%2589%2587%2520%2520pic.JPG?imgmax=200
+
+
+
+CHANGELOG for Imagoxy 0.5 / 2009-07-17
+========================================
+The first release version.
