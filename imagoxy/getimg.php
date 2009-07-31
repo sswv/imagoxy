@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Imagoxy 0.51 / 2009-07-20
+ * Imagoxy 0.52 / 2009-07-31
  * 
  * Imagoxy is a tiny PHP toolkit. It downloads pictures from remote server to local server and relocate
  * corresponding http requests to the local one. It is used to access pictures when the remote server 
@@ -25,8 +25,12 @@
 	$error_file = $work_dir . 'error.png';
 	// Legal HTTP_REFERER prefix.
 	$reffer_list = array('http://www.example.com/', 'http://example.com/');
-	// Legal file extension name.
-	$legal_type = array('png', 'jpe', 'jpeg', 'jpg', 'gif', 'bmp', 'ico', 'tiff', 'tif', 'svg', 'svgz');
+	// Whether to check HTTP_REFERER before downloading new picutre.
+	$check_reffer_before_download = true;
+	// Whether to check HTTP_REFERER before showing downloaded picutre.
+	$check_reffer_before_show = false;
+	// Legal file URL patterns (regular expression). They meet 'OR' logic.
+	$legal_pattern = array('http://.*\.ggpht\.com/.*\.(png|jpe|jpeg|jpg|gif|bmp|ico|tiff|tif|svg|svgz)(\?.*)?$');
 
 	// ======== Access control ========
 	
@@ -34,14 +38,14 @@
 	$reffer_legel = 0;
 	if ($reffer) {
 		while (list($reffer_domain, $reffer_subarray) = each($reffer_list)) {
-			if (ereg($reffer_subarray, "$reffer")) {
+			if (eregi($reffer_subarray, $reffer)) {
 				$reffer_legel = 1;
 				break;
 			}
 		}
 	}
 	
-	if (!$reffer_legel)
+	if ($check_reffer_before_show && !$reffer_legel)
 	{
 		header("Location: $error_file");
 	}
@@ -63,13 +67,15 @@
 			$url = 'http://' . $url;
 		}
 		
-		$extends = explode('.' , $url);
-		$extends_va = count($extends) - 1;
-		$extend = $extends[$extends_va];
-		$extends = explode('?' , $extend);
-		$extend = strtolower($extends[0]);
+		$pattern_legel = 0;
+		foreach ($legal_pattern as $pattern) {
+			if (eregi($pattern, $url)) {
+				$pattern_legel = 1;
+				break;
+			}
+		}
 		
-		if (!in_array($extend, $legal_type)) {
+		if (!$pattern_legel) {
 			header("Location: $error_file");
 		} else {
 			$file_name_base = basename($url);
@@ -78,11 +84,15 @@
 			
 			$file_name_url = $cache_dir . md5($url) . '-' . $file_name_base;
 			$file_name_local = urldecode($file_name_url);
+			$file_downloaded = file_exists($file_name_local);
 			
-			if (!file_exists($file_name_local)) {
-				
-				// ======== Download ========
-				
+			// ======== Download ========
+			
+			if ($file_downloaded) {
+				$relocation_file = $work_dir . $file_name_url;
+			} else if ($check_reffer_before_download && !$reffer_legel) {
+				$relocation_file = $error_file;
+			} else {
 				$remote_file = fopen($url, 'rb');
 				if ($remote_file) {
 					$local_file = fopen($file_name_local, 'wb');
@@ -97,11 +107,11 @@
 				if ($local_file) {
 					fclose($local_file);
 				}
+				$relocation_file = $work_dir . $file_name_url;
 			}
 			
 			// ======== Relocation ========
 			
-			$relocation_file = $work_dir . $file_name_url;
 			header("Location: $relocation_file");
 		}
 	}
