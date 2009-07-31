@@ -1,4 +1,4 @@
-README for Imagoxy 0.51
+README for Imagoxy 0.52
 ==============================
 
 Imagoxy ("image proxy") is a tiny PHP toolkit. It downloads pictures from remote server to local server and relocate corresponding http requests to the local one. It is used to access pictures when the remote server is banned or slow from the network of clients (e.g. Download pictures from Picasa on an unbanned US server and tranfer them to China's viewers where Picasa is banned sometimes).
@@ -12,7 +12,9 @@ Install:
 	* Set '$cache_dir' to the location you wish files downloaded to. (default is OK in most cases)
 	* Set '$error_file' as the file relocated to when access control denied. (default is OK in most cases)
 	* Set '$reffer_list' as the legal HTTP_REFERER prefix list.
-	* Set '$legal_type' as the legal file extension name list. (default is OK in most cases)
+	* Set '$check_reffer_before_download' as whether to check HTTP_REFERER before downloading new picutre.
+	* Set '$check_reffer_before_show' as whether to check HTTP_REFERER before showing downloaded picutre.
+	* Set '$legal_pattern' as the legal file URL patterns. (default is for Picasa; you can add more)
 2. Update the 'imagoxy' directory to your '$work_dir' and make the '$cache_dir' writable.
 3. Configure and deploy Imagoxy front-ends such as Imagoxy-WP.
 
@@ -50,4 +52,4 @@ I have a picture named "火车   测试-+=_  [.a.] 图片  pic.JPG" (encoded in 
 Enjoy it!
 
 Jian Lin <lj@linjian.org>
-2009-07-20
+2009-07-31
