@@ -1,3 +1,8 @@
+CHANGELOG for Imagoxy 0.54 / 2011-03-02
+========================================
+1. Support for Picasa's new domain name. Thanks to Lenin Lee.
+
+
 CHANGELOG for Imagoxy 0.53 / 2009-12-10
 ========================================
 1. Support for Flickr. If you do not use Flickr, you can ignore this update.

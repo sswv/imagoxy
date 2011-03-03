@@ -10,7 +10,7 @@ Description: Imagoxy-WP is a wordpress front-end for Imagoxy. Imagoxy downloads 
 
 Author: Jian Lin
 
-Version: 0.53
+Version: 0.54
 
 Author URI: http://blog.linjian.org/
 
@@ -39,6 +39,21 @@ function imagoxy_wp_convert($text) {
 			$picasa_url = preg_replace("/<img.+?src=\"(http:\/\/.*?\.ggpht\.com\/.*?)\".*?>/i", "$1", $picasa_img);
 			$picasa_img_c1 = preg_replace("/<img(.+?)src=\"http:\/\/.*?\.ggpht\.com\/.*?\".*?>/i", "$1", $picasa_img);
 			$picasa_img_c2 = preg_replace("/<img.+?src=\"http:\/\/.*?\.ggpht\.com\/.*?\"(.*?)>/i", "$1", $picasa_img);
+			$picasa_url_new = urlencode(strrev(base64_encode($picasa_url)));
+			$picasa_img_new = "<img" . $picasa_img_c1 . "src=\"$imagoxy_dir" . 
+				"getimg.php?u=" . $picasa_url_new . "\"" . $picasa_img_c2 . ">";
+			array_push($exchangeDest, $picasa_img_new);
+		}
+	}
+	
+	$picasa_num = preg_match_all("/<img.+?src=\"https:\/\/.*?\.googleusercontent\.com\/.*?\".*?>/i", $text, $picasa_matches, PREG_PATTERN_ORDER);
+	
+	if ($picasa_num > 0) {
+		foreach ($picasa_matches[0] as $picasa_img) {
+			array_push($exchangeSource, $picasa_img);
+			$picasa_url = preg_replace("/<img.+?src=\"(https:\/\/.*?\.googleusercontent\.com\/.*?)\".*?>/i", "$1", $picasa_img);
+			$picasa_img_c1 = preg_replace("/<img(.+?)src=\"https:\/\/.*?\.googleusercontent\.com\/.*?\".*?>/i", "$1", $picasa_img);
+			$picasa_img_c2 = preg_replace("/<img.+?src=\"https:\/\/.*?\.googleusercontent\.com\/.*?\"(.*?)>/i", "$1", $picasa_img);
 			$picasa_url_new = urlencode(strrev(base64_encode($picasa_url)));
 			$picasa_img_new = "<img" . $picasa_img_c1 . "src=\"$imagoxy_dir" . 
 				"getimg.php?u=" . $picasa_url_new . "\"" . $picasa_img_c2 . ">";

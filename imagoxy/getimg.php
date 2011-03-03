@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Imagoxy 0.53 / 2009-12-10
+ * Imagoxy 0.54 / 2011-03-02
  * 
  * Imagoxy is a tiny PHP toolkit. It downloads pictures from remote server to local server and relocate
  * corresponding http requests to the local one. It is used to access pictures when the remote server 
@@ -31,6 +31,7 @@
 	$check_reffer_before_show = false;
 	// Legal file URL patterns (regular expression). They meet 'OR' logic.
 	$legal_pattern = array('http://.*\.ggpht\.com/.*\.(png|jpe|jpeg|jpg|gif|bmp|ico|tiff|tif|svg|svgz)(\?.*)?$',
+		'https://.*\.googleusercontent\.com/.*\.(png|jpe|jpeg|jpg|gif|bmp|ico|tiff|tif|svg|svgz)(\?.*)?$',
 		'http://.*\.static\.flickr\.com/.*\.(png|jpe|jpeg|jpg|gif|bmp|ico|tiff|tif|svg|svgz)(\?.*)?$');
 
 	// ======== Access control ========
@@ -64,7 +65,7 @@
 			$url = '';
 		}
 		
-		if (strtolower(substr($url, 0, 7)) != 'http://') {
+		if (stripos($url, 'http://') !== 0 && stripos($url, 'https://') !== 0) {
 			$url = 'http://' . $url;
 		}
 		
