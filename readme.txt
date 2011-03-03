@@ -4,10 +4,10 @@ Contributors: Jian Lin
 Donate link: http://www.linjian.org/donate/
 Tags: images, Picasa, Flickr, GFW
 Requires at least: 2.0.0
-Tested up to: 2.8.9
-Stable tag: 0.53
+Tested up to: 3.1.0
+Stable tag: 0.54
 
-== README for Imagoxy 0.53 ==
+== README for Imagoxy 0.54 ==
 
 Imagoxy ("image proxy") is a tiny PHP toolkit. It downloads pictures from remote server to local server and relocate corresponding http requests to the local one. It is used to access pictures when the remote server is banned or slow from the network of clients (e.g. Download pictures from Picasa on an unbanned US server and tranfer them to China's viewers where Picasa is banned sometimes).
 
@@ -60,9 +60,9 @@ I have a picture named "U+706BU+8F66   U+6D4BU+8BD5-+=_  [.a.] U+56FEU+7247  pic
 Enjoy it!
 
 Jian Lin <lj@linjian.org>
-2009-12-10
+2011-03-02
 
-== README for Imagoxy-WP 0.53 ==
+== README for Imagoxy-WP 0.54 ==
 
 Imagoxy-WP is a wordpress front-end for Imagoxy. Imagoxy downloads pictures from remote server to local server and relocate corresponding http requests to the local one. It is used to access pictures when the remote server is banned or slow from the network of clients. Imagoxy-WP now converts Picasa and Flickr URLs to local Imagoxy URLs, and you can also add your customed conversion.
 
@@ -86,4 +86,4 @@ Since pictures are downloaded from your own server, it won't be banned then.
 Enjoy it!
 
 Jian Lin <lj@linjian.org>
-2009-12-10
+2011-03-02

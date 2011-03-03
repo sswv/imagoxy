@@ -1,4 +1,4 @@
-README for Imagoxy-WP 0.53
+README for Imagoxy-WP 0.54
 ==============================
 
 Imagoxy-WP is a wordpress front-end for Imagoxy. Imagoxy downloads pictures from remote server to local server and relocate corresponding http requests to the local one. It is used to access pictures when the remote server is banned or slow from the network of clients. Imagoxy-WP now converts Picasa and Flickr URLs to local Imagoxy URLs, and you can also add your customed conversion.
@@ -23,4 +23,4 @@ Since pictures are downloaded from your own server, it won't be banned then.
 Enjoy it!
 
 Jian Lin <lj@linjian.org>
-2009-12-10
+2011-03-02

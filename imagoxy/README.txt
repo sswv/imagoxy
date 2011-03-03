@@ -1,4 +1,4 @@
-README for Imagoxy 0.53
+README for Imagoxy 0.54
 ==============================
 
 Imagoxy ("image proxy") is a tiny PHP toolkit. It downloads pictures from remote server to local server and relocate corresponding http requests to the local one. It is used to access pictures when the remote server is banned or slow from the network of clients (e.g. Download pictures from Picasa on an unbanned US server and tranfer them to China's viewers where Picasa is banned sometimes).
@@ -52,4 +52,4 @@ I have a picture named "火车   测试-+=_  [.a.] 图片  pic.JPG" (encoded in 
 Enjoy it!
 
 Jian Lin <lj@linjian.org>
-2009-12-10
+2011-03-02
