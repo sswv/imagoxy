@@ -51,5 +51,4 @@ I have a picture named "火车   测试-+=_  [.a.] 图片  pic.JPG" (encoded in 
 
 Enjoy it!
 
-Jian Lin <lj@linjian.org>
 2011-03-02

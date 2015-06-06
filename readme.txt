@@ -1,13 +1,15 @@
-=== imagoxy ===
+imagoxy
+=======
 
 Contributors: Jian Lin
-Donate link: http://www.linjian.org/donate/
-Tags: images, Picasa, Flickr, GFW
+Donate link: http://www.linjian.org
+Tags: images, Picasa, Flickr
 Requires at least: 2.0.0
 Tested up to: 3.1.0
 Stable tag: 0.54
 
-== README for Imagoxy 0.54 ==
+README for Imagoxy 0.54
+==============================
 
 Imagoxy ("image proxy") is a tiny PHP toolkit. It downloads pictures from remote server to local server and relocate corresponding http requests to the local one. It is used to access pictures when the remote server is banned or slow from the network of clients (e.g. Download pictures from Picasa on an unbanned US server and tranfer them to China's viewers where Picasa is banned sometimes).
 
@@ -37,7 +39,7 @@ You can write a html page with an Imagoxy URL in <img src="..."> label. Open it 
 
 Example:
 
-I have a picture named "U+706BU+8F66   U+6D4BU+8BD5-+=_  [.a.] U+56FEU+7247  pic.JPG" (encoded in zh_CN.utf_8) on Picasa:
+I have a picture named "火车   测试-+=_  [.a.] 图片  pic.JPG" (encoded in zh_CN.utf_8) on Picasa:
 
 	* Normal Picasa URL:
 	http://lh5.ggpht.com/_ZQ_-T1yEBQY/SmQSOX5_xFI/AAAAAAAABPY/h8Tw6PWuZP8/%E7%81%AB%E8%BD%A6%20%20%20%E6%B5%8B%E8%AF%95-%2B%3D_%20%20%5B.a.%5D%20%E5%9B%BE%E7%89%87%20%20pic.JPG
@@ -59,10 +61,10 @@ I have a picture named "U+706BU+8F66   U+6D4BU+8BD5-+=_  [.a.] U+56FEU+7247  pic
 
 Enjoy it!
 
-Jian Lin <lj@linjian.org>
 2011-03-02
 
-== README for Imagoxy-WP 0.54 ==
+README for Imagoxy-WP 0.54
+==============================
 
 Imagoxy-WP is a wordpress front-end for Imagoxy. Imagoxy downloads pictures from remote server to local server and relocate corresponding http requests to the local one. It is used to access pictures when the remote server is banned or slow from the network of clients. Imagoxy-WP now converts Picasa and Flickr URLs to local Imagoxy URLs, and you can also add your customed conversion.
 
@@ -85,5 +87,4 @@ Since pictures are downloaded from your own server, it won't be banned then.
 
 Enjoy it!
 
-Jian Lin <lj [at] linjian [dot] org>
 2011-03-02

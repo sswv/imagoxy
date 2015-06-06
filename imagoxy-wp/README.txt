@@ -22,5 +22,4 @@ Since pictures are downloaded from your own server, it won't be banned then.
 
 Enjoy it!
 
-Jian Lin <lj@linjian.org>
 2011-03-02
