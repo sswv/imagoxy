@@ -9,9 +9,9 @@
  * 
  * Licensed under a BSD license.
  * 
- * Author      : Jian Lin <lj@linjian.org>
- * Author Blog : http://blog.linjian.org/
- * Project Web : https://sourceforge.net/projects/imagoxy/
+ * Author      : Jian Lin <lj [at] linjian.org>
+ * Author URI  : http://www.linjian.org
+ * Project Web : https://github.com/sswv/imagoxy/
  * 
  **/
 

@@ -4,15 +4,15 @@
 
 Plugin Name: Imagoxy-WP
 
-Plugin URI: https://sourceforge.net/projects/imagoxy/
+Plugin URI: https://github.com/sswv/imagoxy/
 
 Description: Imagoxy-WP is a wordpress front-end for Imagoxy. Imagoxy downloads pictures from remote server to local server and relocate corresponding http requests to the local one. It is used to access pictures when the remote server is banned or slow from the network of clients. Imagoxy-WP now converts Picasa and Flickr URLs to local Imagoxy URLs, and you can also add your customed conversion.
 
-Author: Jian Lin
+Author: Jian Lin <lj [at] linjian.org>
 
 Version: 0.54
 
-Author URI: http://blog.linjian.org/
+Author URI: http://www.linjian.org
 
 */ 
 
